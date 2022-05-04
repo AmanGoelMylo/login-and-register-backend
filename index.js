@@ -8,7 +8,7 @@ app.use(express.urlencoded());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb://localhost:27017/myLoginRegisterDB",
+  "mongodb://localhost:4001/myLoginRegisterDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -65,6 +65,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.listen(9002, () => {
-  console.log("BE started at port 9002");
+app.listen(4001, () => {
+  console.log("BE started at port 4001");
 });
