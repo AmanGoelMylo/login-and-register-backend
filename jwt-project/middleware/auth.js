@@ -12,9 +12,7 @@ const verifyToken = async (req, res, next) => {
     return res.status(403).send("A token is required for authentication");
   } else {
     try {
-      console.log("--------->>>", token);
       const decoded = await jwt.verify(token, config.TOKEN_KEY);
-      console.log("----***********", decoded);
       req.User = decoded;
     } catch (err) {
       console.log(err);
